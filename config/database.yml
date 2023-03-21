@@ -29,7 +29,11 @@ test:
   database: videogallery_mod3_test
 
 production:
-  <<: *default
-  #database: db/production.postgresql
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 20000
+  url: <%= ENV['DATABASE_URL'] %>
+  username: <%= ENV['DATABASE_USER'] %> # edit me
+  password: <%= ENV['DATABASE_PASSWORD'] %> # edit me
 
-  database: videogallery_mod3_production
