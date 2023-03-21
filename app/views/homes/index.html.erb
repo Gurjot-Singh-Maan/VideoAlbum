@@ -1,0 +1,32 @@
+   <%= render partial: "layouts/header" %>
+   <div class="d-flex justify-content-center">
+     <%= search_form_for @q, url: root_path do |f| %>
+     <%= f.text_field :title_cont, class: "form-control", placeholder: "Search" %><br>
+     <div class="d-flex justify-content-center"><%= f.submit class: "btn btn-primary" %></div>
+     <% end %>
+   </div>
+   <ul>
+     <div class="container-fluid mt-5">
+       <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5  g-4 cardwidth ">
+         <% @homes.each do |home| %>
+         <li style="list-style-type: none">
+
+           <div class="col">
+             <%= link_to home, class: "text-decoration-none" do  %>
+             <div class="card h-100 border border-0">
+               <%= image_tag(home.cover, class: "card-img-top rounded-4",  alt: "Image") %>
+               <div class="card-body">
+                 <span class=" text-dark "><%= home.title.capitalize%></span>
+                 <p class="card-text"><small class="text-muted "><%= home.company.capitalize %></small>
+                 </p>
+
+               </div>
+
+             </div>
+             <% end %>
+           </div>
+         </li>
+         <% end %>
+       </div>
+     </div>
+   </ul>

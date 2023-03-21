@@ -1,0 +1,53 @@
+.youtube{
+     list-style-type: none;
+     font-size: 25px;
+     font-weight: 400;
+     line-height: normal;
+     color:rgb(33,33,33)
+}
+
+.uploadb{
+    text-decoration: none;
+}
+.inputfield{
+    width: 50vw;
+    height:5vh;
+}
+.textarea{
+    width: 50vw;
+    height: 12vh;
+
+}
+.cardwidth{
+    // width: 137rem;
+    padding-left: 5rem;
+    padding-top: 3rem;
+}
+
+
+.sizeoftitle{
+    width:100%;
+    height:800px;
+}
+.descriptionfontsize{
+    font-size: 17px;
+    word-wrap: break-word;
+    background-color: rgb(206, 202, 202);
+}
+.hovver{
+    color:black;
+    &:hover{
+        color:red;
+    }
+}
+.searchwidth{
+    width:352w;
+}
+.navname{
+    background-color:rgb(6, 6, 156);
+    border-radius:50%;
+    width: 40px;
+}
+
+
+

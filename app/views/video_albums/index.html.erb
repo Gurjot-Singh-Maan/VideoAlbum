@@ -1,0 +1,35 @@
+  <%= render partial: "layouts/header" %>
+  <div class="d-flex justify-content-center">
+    <%= search_form_for @q, url: video_albums_path  do |f| %>
+    <%= f.text_field :title_cont, class: "form-control", placeholder: "Search" %><br>
+    <div class="d-flex justify-content-center"><%= f.submit class: "btn btn-primary" %></div>
+    <% end %>
+  </div>
+
+  <ul>
+    <div class="container-fluid mt-5">
+      <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5  g-4 cardwidth ">
+        <% @videoalbums.each do |videoalbum| %>
+        <li style="list-style-type: none">
+
+          <div class="col">
+            <div class="card h-100 border border-0">
+              <%= link_to image_tag(videoalbum.cover, class: "card-img-top rounded-4",  alt: "Image"),videoalbum %>
+              <div class="card-body">
+                <%= link_to videoalbum.title.capitalize, videoalbum, class: "text-decoration-none text-dark " %>
+                <p class="card-text"><small
+                    class="text-muted"><%= link_to videoalbum.company.capitalize, videoalbum, class: "text-decoration-none text-dark fw-light" %></small>
+                </p>
+
+              </div>
+
+            </div>
+          </div>
+          <% end %>
+      </div>
+
+    </div>
+
+    </li>
+
+  </ul>

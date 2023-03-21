@@ -1,0 +1,67 @@
+<%= render partial: "layouts/header" %>
+
+<div class="container mt-5">
+  <%= form_with model: @videoalbum do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title, :autocomplete => "off",placeholder: "Enter the title", :class => " inputfield form-control" %>
+    <% videoalbum.errors.full_messages_for(:title).each do |message| %>
+    <div class="text-danger"><%= message %></div>
+    <% end %>
+  </div>
+  <br>
+
+  <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description, placeholder: "Tell viewers about your video", :class => " textarea form-control" %><br>
+    <% videoalbum.errors.full_messages_for(:description).each do |message| %>
+    <div class="text-danger"><%= message %></div>
+    <% end %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :channel %><br>
+    <%= form.text_field :company, :autocomplete => "off", placeholder: "Channel Name", :class => " inputfield form-control" %><br>
+
+    <% videoalbum.errors.full_messages_for(:company).each do |message| %>
+    <div class="text-danger"><%= message %></div>
+    <% end %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :Tag %><br>
+    <%= form.text_field :all_tags, :autocomplete => "off", placeholder: "Tag sepatated with comma", :class => " inputfield form-control" %><br>
+
+    <% videoalbum.errors.full_messages_for(:all_tags).each do |message| %>
+    <div class="text-danger"><%= message %></div>
+    <% end %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= form.label :cover %><br>
+    <%= form.file_field :cover, class: "form-control" %>
+  </div>
+  <br>
+
+  <div class="form-group">
+    <%= form.label :video %><br>
+    <%= form.file_field :video, class: "form-control" %>
+  </div>
+  <br>
+  <div>
+    <br>
+
+    <div class="form-group">
+      <%= form.label :tick_if_you_want_your_video_will_be_published%><br>
+
+      <%= form.check_box :publish %>
+      <span id="publ"> <%= "Published"%> </span>
+
+      <br>
+      <br>
+      <%= form.submit "upload video" %>
+    </div>
+    <% end %>
+    <br>
+
+  </div>

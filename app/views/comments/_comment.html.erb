@@ -1,0 +1,25 @@
+<div class="container-fluid">
+
+  <% @videoalbum.comments.each do |comment| %>
+
+  <p class="border border-2 rounded pt-3 ps-4 pb-4 descriptionfontsize fw-normal pt-2 text-break">
+    <strong>@<%=comment.commenter %></strong>:-
+
+    <%= comment.body %>
+    <br>
+    <br>
+
+    <span
+      class="float-end mx-3 mb-2 "><%= link_to "",  edit_video_album_comment_path(video_album_id: @videoalbum.id, id: comment.id), class: "text-decoration-none fa fa-edit" %></span>
+
+    <span class="float-end mx-3 mb-2 "><%= link_to "", [comment.video_album, comment], class: " text-danger text-decoration-none fa fa-trash-o", data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                } %></span>
+  </p>
+
+  <p>
+  </p>
+
+  <%end%>
+</div>

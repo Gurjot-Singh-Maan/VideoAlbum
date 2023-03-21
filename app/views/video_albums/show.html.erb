@@ -1,0 +1,58 @@
+<nav class="navbar  navbar-expand-lg fixed-top bg-light">
+    <div class="container-fluid">
+        <ul class="youtube mt-3">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/homes"><i class='fa fa-youtube-play'
+                        style='color: red'></i>YouTube</a>
+            </li>
+        </ul>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
+                <li class="nav-item ms-5 mt-2 fs-5 ">
+                    <%= link_to "Upload Video", new_video_album_url, :class => "uploadb text-dark " %>
+                </li>
+
+                <li class="nav-item ms-5 mt-2 fs-5 ">
+                    <%= link_to "Show Videos", video_albums_url, :class => "uploadb text-dark" %>
+                </li>
+                <li class="nav-item ms-5 mt-2 fs-5 ">
+                    <%= link_to "Edit", edit_video_album_url(@videoalbum), :class => "uploadb text-dark "  %></li>
+                <li class="nav-item ms-5 mt-2 fs-5 "><%= link_to "Destroy", video_album_url(@videoalbum), :class => "uploadb hovver" , data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<hr>
+
+<div class="container-fluid ">
+
+    <%= video_tag url_for(@videoalbum.video), class: "sizeoftitle bg-dark", controls: true %>
+
+</div>
+<div class="ps-3  mt-3 youtube">
+    <h4><%= @videoalbum.title.capitalize%></h4>
+
+    <p><small class="fs-5 fw-light text-break"><%= @videoalbum.company.capitalize%></small></p>
+
+    <br>
+    <div class="container-fluid">
+        <h5>Description</h5>
+        <p class="border border-2 rounded pt-3 ps-4 pb-4 descriptionfontsize fw-normal pt-2 text-break">
+            <%= @videoalbum.description.capitalize %></p>
+    </div>
+</div>
+
+<%= render "comments/form"%>
+<br>
+<br>
+<%= render "comments/comment"%>
