@@ -72,7 +72,17 @@ Rails.application.configure do
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
   
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :user_name => '84f6b6db972d09',
+      :password => '85100d83ec126c',
+      :address => 'sandbox.smtp.mailtrap.io',
+      :domain => 'sandbox.smtp.mailtrap.io',
+      :port => '2525',
+      :authentication => :cram_md5
+        }
 
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
