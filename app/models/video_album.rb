@@ -6,7 +6,7 @@ class VideoAlbum < ApplicationRecord
   validates :description, length: { minimum: 10 }
   validates :company, length: { in: 2..30 }
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
   has_and_belongs_to_many :tags
 
 
