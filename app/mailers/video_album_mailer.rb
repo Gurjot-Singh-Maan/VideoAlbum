@@ -5,7 +5,7 @@ class VideoAlbumMailer < ApplicationMailer
   def send_video_upload_notification
 
   @user = params[:user]
-  debugger
+  
   mail(to: @user.email, subject: "Video uploaded..")
   end
 
