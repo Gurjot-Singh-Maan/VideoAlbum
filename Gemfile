@@ -36,6 +36,9 @@ gem 'foundation-rails'
 
 gem 'faker'
 
+gem "ruby-vips"
+
+
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]edxi
 gem "turbo-rails"
