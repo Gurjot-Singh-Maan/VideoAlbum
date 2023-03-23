@@ -36,7 +36,6 @@ gem 'foundation-rails'
 
 gem 'faker'
 
-gem "ruby-vips"
 
 
 
