@@ -38,14 +38,20 @@
   </div>
   <br>
   <div class="form-group">
-    <%= form.label :cover %><br>
+    <%= form.label :Thumbnail %><br>
     <%= form.file_field :cover, class: "form-control" %>
+    <% videoalbum.errors.full_messages_for(:cover).each do |message| %>
+    <div class="text-danger"><%= "Thumbnail file format should be:- .jpg .jpeg .webp" %></div>
+    <% end %>
   </div>
   <br>
 
   <div class="form-group">
     <%= form.label :video %><br>
     <%= form.file_field :video, class: "form-control" %>
+    <% videoalbum.errors.full_messages_for(:video).each do |message| %>
+    <div class="text-danger"><%= "video file format should be:- .mp4 & .ogg" %></div>
+    <% end %>
   </div>
   <br>
   <div>
