@@ -41,7 +41,7 @@
     <%= form.label :Thumbnail %><br>
     <%= form.file_field :cover, class: "form-control" %>
     <% videoalbum.errors.full_messages_for(:cover).each do |message| %>
-    <div class="text-danger"><%= "Thumbnail file format should be:- .jpg .jpeg .webp" %></div>
+    <div class="text-danger"><%= message %></div>
     <% end %>
   </div>
   <br>
@@ -50,7 +50,7 @@
     <%= form.label :video %><br>
     <%= form.file_field :video, class: "form-control" %>
     <% videoalbum.errors.full_messages_for(:video).each do |message| %>
-    <div class="text-danger"><%= "video file format should be:- .mp4 & .ogg" %></div>
+    <div class="text-danger"><%= message%></div>
     <% end %>
   </div>
   <br>

@@ -1,8 +1,10 @@
 class VideoAlbum < ApplicationRecord
   has_one_attached :cover
   has_one_attached :video
-  validates_acceptance_of :cover, :content_type => ['cover/jpg', 'cover/webp', 'cover/jpeg']
-  validates_acceptance_of :video, :content_type => ['video/mp4', 'video/ogg']
+ 
+ 
+
+
   validates :title, :description, :company, :cover, :video, presence: true
   validates :title, length: { in: 5..200 }
   validates :description, length: { minimum: 10 }
